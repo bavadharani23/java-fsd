@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+<bean class="com.Employee" id="emp1" scope="singleton"></bean>
+
+<bean class="com.Employee" id="emp2" >
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="ravi"></constructor-arg>
+<constructor-arg value="12000"></constructor-arg>
+</bean>
+
+<bean class="com.Employee" id="emp4">
+	<property name="id" value="2"></property>
+	<property name="name" value="Ramesh"></property>
+	<property name="salary" value="14000"></property>
+</bean>
+
+
+<bean class="com.Employee" id="emp5">
+	<property name="salary" value="16000"></property>
+	<property name="name" value="Ajay"></property>
+</bean>
+
+<bean class="com.Employee" id="emp6">
+	<constructor-arg value="1" ></constructor-arg>
+	<constructor-arg value="12000"></constructor-arg>
+	<constructor-arg value="Ramesh"></constructor-arg>
+</bean>
+
+
+<bean class="com.Address" id="add">
+	<property name="city" value="Bangalore"></property>
+	<property name="state" value="Kar"></property>
+</bean>
+
+<bean class="com.Address" id="add1">
+	<property name="city" value="Tamilnadu"></property>
+	<property name="state" value="Dgl"></property>
+</bean>
+
+
+<bean class="com.Employee" id="emp7">
+	<property name="id" value="3"></property>
+	<property name="name" value="Balaji"></property>
+	<property name="salary" value="34000"></property>
+	<property name="add" ref="add"></property>
+</bean>
+<bean class="com.Employee" id="emp8" autowire="byName" scope="prototype">
+	<property name="id" value="4"></property>
+	<property name="name" value="Dinesh"></property>
+	<property name="salary" value="45000"></property>
+</bean>
+
+</beans>
